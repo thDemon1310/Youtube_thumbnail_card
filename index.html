@@ -3,30 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dyanamic</title>
+    <title>Make Card</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <table border="1">
+      <form action="" method="post">
+        <thead>
+          <th colspan="3">Please provide input</th>
+        </thead>
+        <tr>
+          <td><label for="">Enter thumbnail:</label></td>
+          <td colspan="3">
+            <input type="text" name="" id="input_thumbnail" onblur="photo()" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="">Enter video dureation</label></td>
+          <td>
+            <input
+              type="text"
+              name="input_duer"
+              id="input_dur"
+              placeholder="dureation"
+              onblur="dure()"
+            />
+          </td>
+          <!-- <td><input type="number" name="input_sec" id="input_sec" placeholder="seconds"></td> -->
+        </tr>
+        <tr>
+          <td><label for="input_title">Enter your title:</label></td>
+          <td colspan="3">
+            <input
+              type="text"
+              name="input_title"
+              id="input_title"
+              placeholder="title"
+              onblur="Ctitle()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="input_channel">Enter the channel name:</label></td>
+          <td colspan="3">
+            <input
+              type="text"
+              name="input_channel"
+              id="input_channel"
+              placeholder="channel"
+              onblur="cname()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="input_views">Enter views:</label></td>
+          <td colspan="3">
+            <input
+              type="number"
+              name="input_views"
+              id="input_views"
+              placeholder="views"
+              onblur="t_views()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="input_months">Months old:</label></td>
+          <td colspan="3">
+            <input
+              type="number"
+              name="input_months"
+              id="input_months"
+              placeholder="months old"
+              onblur="monthsold()"
+            />
+          </td>
+        </tr>
+      </form>
+    </table>
     <div class="container">
       <div class="sc_no dimension">
         <span id="serial">1</span>
       </div>
       <div class="image dimension">
-        <img id="thumbnail" src="" alt="" />
+        <img id="thumbnail" src="" />
         <div id="dureation"></div>
       </div>
       <div class="about dimension">
         <h3 id="title">
-          <a href=""
-            >
-          </a>
+          <a href=""></a>
         </h3>
         <div class="channel">
           <span class="color"><a class="link" href=""></a></span
           ><span class="color">&nbsp;&#x2022;&nbsp;</span>
-          <span class="color"></span><span class="color">&nbsp;views</span>
+          <span class="color" id="v"></span><span class="color">&nbsp;views</span>
           <span class="color">&nbsp;&#x2022;&nbsp;</span
-          ><span class="color"></span><span class="color">&nbsp; months</span>
+          ><span class="color" id="o"></span><span class="color">&nbsp; months</span>
           <span class="color">&nbsp;ago</span>
         </div>
       </div>
