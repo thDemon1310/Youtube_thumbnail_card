@@ -66,18 +66,26 @@ function t_views() {
   let show_view;
   if (view >= 1000000) {
     show_view = Math.floor(view / 1000000) + "M";
-
-  }
-  else if (view >= 1000) {
+  } else if (view >= 1000) {
     show_view = Math.floor(view / 1000) + "K";
+  } else {
+    show_view = view;
   }
-  else{
-    show_view=view;
-  }
-  document.getElementById('v').innerHTML=show_view;
+  document.getElementById("v").innerHTML = show_view;
 }
 // --------MOnths old=--------
 function monthsold() {
-    let time= document.getElementById("input_months").value
-    document.getElementById("o").innerHTML=time
+  let time = document.getElementById("input_months").value;
+  cal_time = time / 24;
+  if (cal_time < 1) {
+    document.getElementById("o").innerHTML = time;
+  } else {
+    document.getElementById("o").innerHTML = cal_time;
+  }
+  // if ((time) => 24) {
+  //   cal_time = time / 24;
+  //   document.getElementById("o").innerHTML = cal_time;
+  // } else {
+  //   document.getElementById("o").innerHTML = time;
+  // }
 }
