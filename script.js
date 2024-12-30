@@ -79,8 +79,10 @@ function monthsold() {
   cal_time = time / 24;
   if (cal_time < 1) {
     document.getElementById("o").innerHTML = time;
+    document.getElementById("year").innerHTML = " months";
   } else {
     document.getElementById("o").innerHTML = cal_time;
+    document.getElementById("year").innerHTML = " years";
   }
   // if ((time) => 24) {
   //   cal_time = time / 24;
