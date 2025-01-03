@@ -76,13 +76,25 @@ function t_views() {
 // --------MOnths old=--------
 function monthsold() {
   let time = document.getElementById("input_months").value;
-  cal_time = time / 24;
+  let cal_time = time / 12;
   if (cal_time < 1) {
     document.getElementById("o").innerHTML = time;
     document.getElementById("year").innerHTML = " months";
   } else {
-    document.getElementById("o").innerHTML = cal_time;
-    document.getElementById("year").innerHTML = " years";
+    // let t = cal_time.toString();
+    // let t_array = t.split(".");
+    // let year = t_array[0]; // let year = Math.floor(cal_time/12)
+    // let month = Math.ceil((cal_time - t_array[0]) * 12); // let month = cal_time%12
+    let year = Math.floor(cal_time)
+    let month = time%12
+    if (month == 0) {
+      document.getElementById("o").innerHTML = cal_time;
+      document.getElementById("year").innerHTML = " years";
+    }
+    else{
+      document.getElementById("year").innerHTML = "";
+      document.getElementById("o").innerHTML=`${year} years ${month} months`
+    }
   }
   // if ((time) => 24) {
   //   cal_time = time / 24;
